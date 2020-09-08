@@ -31,12 +31,13 @@ def generate_modifiers():
     upper = (lambda w: w.upper())
     lower = (lambda w: w.lower())
     capitalize = (lambda w: w.capitalize())
+    replace_dash = (lambda w: w.replace("-", " "))
     replace_spaces = (lambda w: w.replace(" ", ""))
     replace_a = (lambda w: w.replace("a", "@").replace("A", "@"))
     replace_e = (lambda w: w.replace("e", "3").replace("E", "3"))
     replace_i = (lambda w: w.replace("i", "!").replace("I", "!"))
     to_pascal_case = (lambda word: ''.join(w for w in word.title() if not w.isspace()))
-    modifiers = [upper, lower, capitalize, replace_spaces, replace_a, replace_e, replace_i, to_pascal_case]
+    modifiers = [upper, lower, capitalize, replace_dash, replace_spaces, replace_a, replace_e, replace_i, to_pascal_case]
     return modifiers
 
 
